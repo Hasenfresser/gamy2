@@ -21,9 +21,4 @@ dnf install -y tmux htop neovim fastfetch
 
 #### Example for enabling a System Unit File
 
-# Decrypting and mounting games disks
-COPY --chmod=777 build_files/services/games.timer build_files/services/games.service /etc/systemd/system/
-COPY --chmod=755 build_files/services/games.sh /usr/local/bin/
-RUN systemctl enable games.timer
-
 systemctl enable podman.socket
