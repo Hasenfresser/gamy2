@@ -37,8 +37,10 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/build.sh
 
 # Decrypting and mounting games disks
-COPY build_files/services/games.timer build_files/services/games.service build_files/services/games.sh /etc/systemd/system/
+COPY --chmod=777 build_files/services/games.timer build_files/services/games.service /etc/systemd/system/
+COPY --chmod=755 build_files/services/games.sh /usr/local/bin/
 RUN systemctl enable games.timer
+
 
 ### LINTING
 ## Verify final image and contents are correct.
