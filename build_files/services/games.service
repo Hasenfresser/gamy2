@@ -2,4 +2,4 @@
 Description="Decrypts and mount games disks"
 
 [Service]
-ExecStart=/etc/systemd/system/games.sh
+ExecStart=/usr/lib/systemd/system/games/games.sh
